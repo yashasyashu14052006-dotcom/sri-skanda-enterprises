@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YASHU | #17 — District Level Volleyball Outside Attacker</title>
+  <meta name="description" content="Cinematic 3D Interactive Athlete Portfolio for Yashas Gowda (YASHU) — #17 Outside Attacker, EPCET Volleyball Club, Bangalore, India.">
+  <meta name="keywords" content="Yashu, Yashas Gowda, Volleyball Player, Outside Attacker, EPCET Volleyball Club, Bangalore Volleyball, Athlete Portfolio">
+  
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:title" content="YASHU | #17 — District Level Volleyball Outside Attacker">
+  <meta property="og:description" content="Cinematic 3D interactive sports film & portfolio for district-level volleyball athlete Yashu.">
+  <meta property="og:image" content="./images/profile/yashu_portrait.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="./src/styles/main.css">
+
+  <!-- Local High-Performance Vendor Libraries -->
+  <script src="./src/vendor/lenis.min.js"></script>
+  <script src="./src/vendor/gsap.min.js"></script>
+  <script src="./src/vendor/ScrollTrigger.min.js"></script>
+  <script src="./src/vendor/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       00 — Custom Magnet Cursor
+       ========================================================================= -->
+  <div class="custom-cursor">
+    <div class="cursor-ring">
+      <span class="cursor-label">VIEW</span>
+    </div>
+    <div class="cursor-dot"></div>
+  </div>
+
+  <!-- =========================================================================
+       01 — Minimal Navigation Bar & Telemetry HUD
+       ========================================================================= -->
+  <header class="navbar">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-brand-title">YASHU</span>
+      <span class="nav-brand-badge">#17</span>
+    </a>
+
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#hero" class="nav-link">ARENA</a></li>
+        <li><a href="#profile-section" class="nav-link">PLAYER</a></li>
+        <li><a href="#journey-section" class="nav-link">JOURNEY</a></li>
+        <li><a href="#skills-section" class="nav-link">SKILLS</a></li>
+        <li><a href="#achievements-section" class="nav-link">MATCHES</a></li>
+        <li><a href="#gallery-section" class="nav-link">MEDIA</a></li>
+        <li><a href="#final-section" class="nav-link">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-controls">
+      <!-- Sound On/Off Toggle -->
+      <button class="sound-btn" aria-label="Toggle Arena Audio">
+        <div class="sound-btn-wave">
+          <span class="sound-bar"></span>
+          <span class="sound-bar"></span>
+          <span class="sound-bar"></span>
+        </div>
+        <span class="sound-btn-label">SOUND OFF</span>
+      </button>
+
+      <!-- Circular Scroll Indicator -->
+      <svg class="scroll-progress-ring" viewBox="0 0 36 36">
+        <circle class="scroll-ring-bg" cx="18" cy="18" r="15" />
+        <circle class="scroll-ring-indicator" cx="18" cy="18" r="15" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       02 — Three.js WebGL & Impact VFX Canvases
+       ========================================================================= -->
+  <div id="webgl-container"></div>
+  <canvas id="speedlines-canvas" class="speedlines-canvas"></canvas>
+  <div class="impact-flash-overlay"></div>
+
+  <!-- =========================================================================
+       03 — Pinned Continuous 3D Scrollytelling Film Track
+       Hero Prologue -> Chapter 01 (Approach) -> Chapter 02 (Jump) -> Chapter 03 (Smash BOOM)
+       ========================================================================= -->
+  <div class="scrollytelling-wrapper" id="hero">
+    <div class="cinematic-pinned-track">
+      <div class="cinematic-hud-overlay">
+
+        <!-- Prologue / Hero Screen Content -->
+        <div class="hero-prologue-content">
+          <div>
+            <div class="hero-meta-label">
+              <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+              BANGALORE, INDIA &nbsp;·&nbsp; EPCET VOLLEYBALL CLUB
+            </div>
+            <h1 class="title-giant">YASHU</h1>
+            <div class="hero-subtitle">YASHAS GOWDA &nbsp;·&nbsp; DISTRICT LEVEL VOLLEYBALL PLAYER</div>
+            <div class="hero-specs-pill">OUTSIDE ATTACKER &nbsp;·&nbsp; #17 &nbsp;·&nbsp; RIGHT HANDED</div>
+          </div>
+
+          <div class="scroll-indicator-cue">
+            <span>SCROLL TO ENTER</span>
+            <div class="scroll-cue-line"></div>
+          </div>
+        </div>
+
+        <!-- Chapter 01: The Approach Overlay -->
+        <div class="stage-caption-box" id="stage-approach">
+          <div class="stage-number">01</div>
+          <h2 class="stage-title">THE APPROACH</h2>
+          <div class="stage-words">
+            <span class="kinetic-word">FOCUS.</span>
+            <span class="kinetic-word">TIMING.</span>
+            <span class="kinetic-word">MOMENTUM.</span>
+            <span class="kinetic-word">ATTACK.</span>
+          </div>
+        </div>
+
+        <!-- Chapter 02: The Jump Overlay -->
+        <div class="stage-caption-box" id="stage-jump">
+          <div class="stage-number">02</div>
+          <h2 class="stage-title">THE JUMP</h2>
+          <div class="stage-words">
+            <span class="kinetic-word">RISE.</span>
+            <span class="kinetic-word">HIGHER.</span>
+            <span class="kinetic-word">#17 YASHU</span>
+          </div>
+        </div>
+
+        <!-- Chapter 03: The Smash Overlay -->
+        <div class="stage-caption-box" id="stage-smash">
+          <div class="stage-number">03</div>
+          <h2 class="stage-title text-orange">THE SMASH</h2>
+          <div class="stage-words">
+            <span class="kinetic-word lit">MAXIMUM REACH.</span>
+            <span class="kinetic-word lit">EXPLOSIVE POWER.</span>
+            <span class="kinetic-word lit" style="color: #ff5500;">BOOM.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       04 — Post-Impact Section: Player Profile
+       ========================================================================= -->
+  <section class="content-section" id="profile-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>04 / ATHLETE PROFILE</span>
+      </div>
+      <h2 class="title-xl">THIS IS YASHU.</h2>
+      <p class="text-silver">YASHAS GOWDA &nbsp;·&nbsp; DISTRICT LEVEL VOLLEYBALL PLAYER</p>
+    </div>
+
+    <div class="profile-grid">
+      <!-- Athlete Visual Card -->
+      <div class="profile-visual-card">
+        <img src="./images/profile/yashu_portrait.jpg" alt="Yashu - Yashas Gowda #17" class="profile-visual-img" loading="lazy">
+        <div class="profile-badge-overlay">
+          <div class="profile-badge-jersey">#17</div>
+          <div class="profile-badge-team">EPCET VOLLEYBALL CLUB</div>
+        </div>
+      </div>
+
+      <!-- Athlete Specifications & Statement -->
+      <div class="profile-details-column">
+        <div class="profile-bio-box">
+          <p class="profile-bio-quote">"Started with passion. Built through repetition. Driven by the next point."</p>
+        </div>
+
+        <div class="profile-meta-table">
+          <div class="meta-row">
+            <span class="meta-label">FULL NAME</span>
+            <span class="meta-value">YASHAS GOWDA</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">DISPLAY NAME</span>
+            <span class="meta-value">YASHU</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">AGE</span>
+            <span class="meta-value">20 YEARS OLD</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">LOCATION</span>
+            <span class="meta-value">BANGALORE, INDIA</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">POSITION</span>
+            <span class="meta-value">OUTSIDE ATTACKER</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">DOMINANT HAND</span>
+            <span class="meta-value">RIGHT HANDED</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">CURRENT CLUB</span>
+            <span class="meta-value">EPCET VOLLEYBALL CLUB</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">COMPETITIVE LEVEL</span>
+            <span class="meta-value">DISTRICT LEVEL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       05 — Verified Statistics Telemetry HUD
+       ========================================================================= -->
+  <section class="content-section" id="stats-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>05 / VERIFIED TELEMETRY</span>
+      </div>
+      <h2 class="title-xl">ATHLETE METRICS.</h2>
+      <p class="text-silver">Strictly verified competition and playing credentials.</p>
+    </div>
+
+    <div class="stats-telemetry-grid">
+      <div class="stat-telemetry-card">
+        <div class="stat-card-glow"></div>
+        <div class="stat-num-display">
+          <span class="stat-num-val" data-target="20">0</span>
+        </div>
+        <div class="stat-label">YEARS OLD</div>
+        <div class="stat-caption">Prime athletic physical development</div>
+      </div>
+
+      <div class="stat-telemetry-card">
+        <div class="stat-card-glow"></div>
+        <div class="stat-num-display">
+          <span style="font-size: 0.6em; margin-right: 2px;">#</span>
+          <span class="stat-num-val" data-target="17">0</span>
+        </div>
+        <div class="stat-label">JERSEY NUMBER</div>
+        <div class="stat-caption">Outside Attacker Identity</div>
+      </div>
+
+      <div class="stat-telemetry-card">
+        <div class="stat-card-glow"></div>
+        <div class="stat-num-display">
+          <span class="stat-num-val" data-target="3">0</span>
+          <span class="stat-num-suffix">YRS</span>
+        </div>
+        <div class="stat-label">EXPERIENCE</div>
+        <div class="stat-caption">Continuous daily court discipline</div>
+      </div>
+
+      <div class="stat-telemetry-card">
+        <div class="stat-card-glow"></div>
+        <div class="stat-num-display">
+          <span class="stat-num-val" data-target="2021">0</span>
+        </div>
+        <div class="stat-label">STARTED PLAYING</div>
+        <div class="stat-caption">First discovered passion for volleyball</div>
+      </div>
+
+      <div class="stat-telemetry-card">
+        <div class="stat-card-glow"></div>
+        <div class="stat-num-display">
+          <span class="stat-num-val" data-target="2">0</span>
+        </div>
+        <div class="stat-label">DISTRICT TOURNAMENTS</div>
+        <div class="stat-caption">Official championship campaigns</div>
+      </div>
+
+      <div class="stat-telemetry-card">
+        <div class="stat-card-glow"></div>
+        <div class="stat-num-display">
+          <span class="stat-num-val" data-target="3">0</span>
+        </div>
+        <div class="stat-label">KEY STRENGTHS</div>
+        <div class="stat-caption">Spiking · Serving · Attacking</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       06 — The Journey Timeline (2021 to Current & The Next Level)
+       ========================================================================= -->
+  <section class="content-section" id="journey-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>06 / THE CHRONOLOGY</span>
+      </div>
+      <h2 class="title-xl">THE JOURNEY.</h2>
+      <p class="text-silver">From the first touch on court to district-level competition.</p>
+    </div>
+
+    <div class="timeline-track-container">
+      
+      <div class="timeline-milestone-item">
+        <div class="timeline-node-pin"></div>
+        <div class="timeline-year-tag">2021</div>
+        <h3 class="timeline-milestone-title">THE START</h3>
+        <div class="timeline-milestone-subtitle">Passion for the Sport</div>
+        <p class="timeline-milestone-desc">Yashu began playing volleyball driven purely by passion, developing an instinct for timing and court feel.</p>
+      </div>
+
+      <div class="timeline-milestone-item">
+        <div class="timeline-node-pin"></div>
+        <div class="timeline-year-tag">2022</div>
+        <h3 class="timeline-milestone-title">THE GRIND</h3>
+        <div class="timeline-milestone-subtitle">Repetition & Foundations</div>
+        <p class="timeline-milestone-desc">Daily conditioning, approach footwork mastery, jump height conditioning, and refining arm swing velocity.</p>
+      </div>
+
+      <div class="timeline-milestone-item">
+        <div class="timeline-node-pin"></div>
+        <div class="timeline-year-tag">2023</div>
+        <h3 class="timeline-milestone-title">THE COMPETITION</h3>
+        <div class="timeline-milestone-subtitle">Arena Experience</div>
+        <p class="timeline-milestone-desc">Testing skills against established competitive teams, building mental resilience and fast offensive reaction.</p>
+      </div>
+
+      <div class="timeline-milestone-item">
+        <div class="timeline-node-pin"></div>
+        <div class="timeline-year-tag">CURRENT</div>
+        <h3 class="timeline-milestone-title">DISTRICT LEVEL</h3>
+        <div class="timeline-milestone-subtitle">EPCET Volleyball Club · Outside Attacker #17</div>
+        <p class="timeline-milestone-desc">Active starting outside attacker, contesting 2 District-Level Tournaments and driving offense at the pin.</p>
+      </div>
+
+      <div class="timeline-milestone-item horizon">
+        <div class="timeline-node-pin"></div>
+        <div class="timeline-open-slot">
+          <div class="timeline-year-tag" style="color: #9ca3af;">HORIZON</div>
+          <h3 class="timeline-milestone-title">THE NEXT LEVEL</h3>
+          <div class="timeline-milestone-subtitle">Future Achievements Slot</div>
+          <p class="timeline-milestone-desc">Training for state-tier selection, invitational titles, and expanding attacking versatility. This chapter is being written right now.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       07 — Emotional Spotlight Section: Why Volleyball
+       ========================================================================= -->
+  <section class="content-section spotlight-section-wrapper" id="why-volleyball">
+    <div class="spotlight-quote-card">
+      <div class="text-tag" style="margin-bottom: 1rem;">PURPOSE & PASSION</div>
+      <h2 class="spotlight-heading-top">STARTED WITH PASSION.</h2>
+      <h2 class="spotlight-heading-bottom">NOW IT'S A PURPOSE.</h2>
+      <p class="spotlight-quote-body">
+        "I play volleyball because on the court, every fraction of a second is an opportunity to rise above limitations."
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       08 — Interactive 3D Tactical Skills Sandbox
+       ========================================================================= -->
+  <section class="content-section" id="skills-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>08 / TACTICAL ARSENAL</span>
+      </div>
+      <h2 class="title-xl">CORE WEAPONS.</h2>
+      <p class="text-silver">Interactive 3D court breakdown of primary attacking strengths.</p>
+    </div>
+
+    <div class="skills-sandbox-grid">
+      <!-- Skill Selectors -->
+      <div class="skills-selector-list">
+        
+        <div class="skill-tab-btn active" data-skill="spiking">
+          <div class="skill-tab-header">
+            <h3 class="skill-tab-name">SPIKING</h3>
+            <span class="skill-tab-role">PRIMARY WEAPON</span>
+          </div>
+          <p class="skill-tab-desc">High-reach vertical elevation combined with rapid right-hand arm swing mechanics and cross-court angle targeting.</p>
+        </div>
+
+        <div class="skill-tab-btn" data-skill="serving">
+          <div class="skill-tab-header">
+            <h3 class="skill-tab-name">SERVING</h3>
+            <span class="skill-tab-role">TACTICAL OFFENSE</span>
+          </div>
+          <p class="skill-tab-desc">Aggressive topspin and hybrid float service designed to disrupt opponent defensive pass formations.</p>
+        </div>
+
+        <div class="skill-tab-btn" data-skill="attacking">
+          <div class="skill-tab-header">
+            <h3 class="skill-tab-name">ATTACKING</h3>
+            <span class="skill-tab-role">OVERALL IDENTITY</span>
+          </div>
+          <p class="skill-tab-desc">Dynamic transition footwork from defensive coverage into explosive offensive approaches across out-of-system rallies.</p>
+        </div>
+
+        <!-- Expandable Slots for Future Skills -->
+        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="text-tag" style="background: rgba(255,255,255,0.04); padding: 0.4rem 0.8rem; border-radius: 2px;">BLOCKING (IN PROGRESS)</span>
+          <span class="text-tag" style="background: rgba(255,255,255,0.04); padding: 0.4rem 0.8rem; border-radius: 2px;">RECEIVING (IN PROGRESS)</span>
+          <span class="text-tag" style="background: rgba(255,255,255,0.04); padding: 0.4rem 0.8rem; border-radius: 2px;">DEFENSE (IN PROGRESS)</span>
+        </div>
+
+      </div>
+
+      <!-- 3D Interactive Tactical Court Viewport -->
+      <div class="skills-interactive-court-viewport">
+        <canvas id="court-tactical-canvas"></canvas>
+        <div class="court-hud-overlay">TACTICAL FLIGHT VECTOR // ACTIVE</div>
+        <div class="court-metrics-display">
+          <div class="court-metric-pill">
+            <div class="court-metric-title">TRAJECTORY FOCUS</div>
+            <div class="court-metric-val" id="metric-focus">Explosive Elevation & Penetration</div>
+          </div>
+          <div class="court-metric-pill">
+            <div class="court-metric-title">STYLE</div>
+            <div class="court-metric-val" id="metric-style">Outside Pin Hitter</div>
+          </div>
+          <div class="court-metric-pill">
+            <div class="court-metric-title">EXECUTION</div>
+            <div class="court-metric-val" id="metric-power">High Velocity Drive</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       09 — The Grind / Training Kinetic Sequence
+       ========================================================================= -->
+  <section class="content-section" id="grind-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>09 / DISCIPLINE & ROUTINE</span>
+      </div>
+      <h2 class="title-xl">THE GRIND.</h2>
+      <p class="text-silver">Talent is built through relentless repetition on dark courts.</p>
+    </div>
+
+    <div class="grind-kinetic-track">
+      <div class="grind-row active">
+        <span class="grind-word">REPETITION.</span>
+        <span class="grind-subtext">500+ SPIKES DAILY</span>
+      </div>
+      <div class="grind-row">
+        <span class="grind-word">DISCIPLINE.</span>
+        <span class="grind-subtext">EARLY MORNING CONDITIONING</span>
+      </div>
+      <div class="grind-row">
+        <span class="grind-word">IMPROVEMENT.</span>
+        <span class="grind-subtext">TIMING & VERTICAL LEAP</span>
+      </div>
+      <div class="grind-row">
+        <span class="grind-word">ATTACK.</span>
+        <span class="grind-subtext">FEARLESS AT THE NET</span>
+      </div>
+      <div class="grind-row">
+        <span class="grind-word" style="color: #ff5500;">AGAIN.</span>
+        <span class="grind-subtext">UNTIL IT BECOMES INSTINCT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10 — Achievements & Verified Matches
+       ========================================================================= -->
+  <section class="content-section" id="achievements-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>10 / COMPETITIVE MILESTONES</span>
+      </div>
+      <h2 class="title-xl">EVERY MATCH BUILDS THE STORY.</h2>
+      <p class="text-silver">Verified district tournament record and developing competitive milestones.</p>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <div>
+          <div class="achievement-tag">COMPETITIVE STATUS</div>
+          <h3 class="achievement-title">DISTRICT LEVEL PLAYER</h3>
+          <div class="achievement-org">Bangalore District Circuit</div>
+        </div>
+        <p class="achievement-desc">Active competitive starter in the Bangalore district volleyball circuit representing EPCET.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div>
+          <div class="achievement-tag">COMPETITIVE RECORD</div>
+          <h3 class="achievement-title">2 DISTRICT TOURNAMENTS</h3>
+          <div class="achievement-org">District Volleyball Association</div>
+        </div>
+        <p class="achievement-desc">Contested 2 full district-tier tournament campaigns as primary Outside Attacker #17.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div>
+          <div class="achievement-tag">CURRENT CLUB</div>
+          <h3 class="achievement-title">EPCET VOLLEYBALL CLUB</h3>
+          <div class="achievement-org">Starting Outside Attacker</div>
+        </div>
+        <p class="achievement-desc">Leading offensive pin hitting, aggressive jump serving, and team rally momentum.</p>
+      </div>
+
+      <!-- Expandable Upcoming Achievement Slots -->
+      <div class="achievement-card open-slot">
+        <div>
+          <div class="achievement-tag">ROADMAP</div>
+          <h3 class="achievement-title">NEXT ACHIEVEMENT</h3>
+          <div class="achievement-org">State & Invitational Tier</div>
+        </div>
+        <p class="achievement-desc">Preparing for upcoming regional championship rosters. Awaiting the next podium victory.</p>
+      </div>
+
+      <div class="achievement-card open-slot">
+        <div>
+          <div class="achievement-tag">ROADMAP</div>
+          <h3 class="achievement-title">NEXT ACHIEVEMENT</h3>
+          <div class="achievement-org">Future Accolades</div>
+        </div>
+        <p class="achievement-desc">Expanding competitive tournament honors and club titles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11 — Spatial 3D Media Gallery & Lightbox
+       ========================================================================= -->
+  <section class="content-section" id="gallery-section">
+    <div class="section-header">
+      <div class="section-tag">
+        <span class="section-tag-dot"></span>
+        <span>11 / ACTION CAPTURES</span>
+      </div>
+      <h2 class="title-xl">MEDIA GALLERY.</h2>
+      <p class="text-silver">Visual chronicles across matches, training sessions, and athlete portraits.</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="gallery-filter-bar">
+      <button class="gallery-filter-btn active" data-category="ALL">ALL</button>
+      <button class="gallery-filter-btn" data-category="PORTRAITS">PORTRAITS</button>
+      <button class="gallery-filter-btn" data-category="ACTION">ACTION</button>
+      <button class="gallery-filter-btn" data-category="TRAINING">TRAINING</button>
+      <button class="gallery-filter-btn" data-category="TOURNAMENT">TOURNAMENT</button>
+      <button class="gallery-filter-btn" data-category="TEAM">TEAM</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      
+      <div class="gallery-panel-card" data-category="PORTRAITS">
+        <img src="./images/profile/yashu_portrait.jpg" alt="Yashu Portrait" class="gallery-panel-img" loading="lazy">
+        <div class="gallery-panel-overlay">
+          <span class="gallery-panel-cat">PORTRAITS</span>
+          <h4 class="gallery-panel-title">Athlete Profile — #17</h4>
+        </div>
+      </div>
+
+      <div class="gallery-panel-card" data-category="ACTION">
+        <img src="./images/action/spike_action.jpg" alt="Aerial Spike" class="gallery-panel-img" loading="lazy">
+        <div class="gallery-panel-overlay">
+          <span class="gallery-panel-cat">ACTION</span>
+          <h4 class="gallery-panel-title">Aerial Smash Takeoff</h4>
+        </div>
+      </div>
+
+      <div class="gallery-panel-card" data-category="ACTION">
+        <img src="./images/action/serve_action.jpg" alt="Jump Serve" class="gallery-panel-img" loading="lazy">
+        <div class="gallery-panel-overlay">
+          <span class="gallery-panel-cat">ACTION</span>
+          <h4 class="gallery-panel-title">Jump Serve Release</h4>
+        </div>
+      </div>
+
+      <div class="gallery-panel-card" data-category="TRAINING">
+        <img src="./images/training/training_facility.jpg" alt="Arena Training" class="gallery-panel-img" loading="lazy">
+        <div class="gallery-panel-overlay">
+          <span class="gallery-panel-cat">TRAINING</span>
+          <h4 class="gallery-panel-title">The Arena Grind</h4>
+        </div>
+      </div>
+
+      <div class="gallery-panel-card" data-category="TOURNAMENT">
+        <img src="./images/tournaments/district_tournament_1.jpg" alt="District Match" class="gallery-panel-img" loading="lazy">
+        <div class="gallery-panel-overlay">
+          <span class="gallery-panel-cat">TOURNAMENT</span>
+          <h4 class="gallery-panel-title">District Championship Round</h4>
+        </div>
+      </div>
+
+      <div class="gallery-panel-card" data-category="TEAM">
+        <img src="./images/team/epcet_team.jpg" alt="EPCET Volleyball Club" class="gallery-panel-img" loading="lazy">
+        <div class="gallery-panel-overlay">
+          <span class="gallery-panel-cat">TEAM</span>
+          <h4 class="gallery-panel-title">EPCET Club Attack Unit</h4>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal">
+    <div class="lightbox-content-box">
+      <button class="lightbox-close-btn" aria-label="Close Lightbox">✕ CLOSE</button>
+      <img src="" alt="Fullscreen View" class="lightbox-img-view">
+      <h3 class="lightbox-title title-lg"></h3>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       12 — Final Scene: The Next Point & Replay Experience
+       ========================================================================= -->
+  <section class="final-scene-section" id="final-section">
+    <div class="final-main-callout">
+      <div class="final-tagline">THIS IS ONLY THE BEGINNING</div>
+      <h2 class="final-punchline">THE NEXT POINT STARTS NOW.</h2>
+      <p class="final-subtext">YASHU (YASHAS GOWDA) &nbsp;·&nbsp; #17 OUTSIDE ATTACKER &nbsp;·&nbsp; EPCET VOLLEYBALL CLUB</p>
+
+      <div class="replay-experience-box">
+        <button class="play-again-btn">
+          <span>⚡ REPLAY EXPERIENCE</span>
+        </button>
+        <span class="text-tag">RETURN TO ARENA PROLOGUE</span>
+      </div>
+    </div>
+
+    <!-- Contact / Opportunities Footer -->
+    <div class="contact-footer-grid">
+      <div>
+        <div class="contact-col-title">GET IN TOUCH</div>
+        <p class="text-muted" style="font-size: 0.85rem; line-height: 1.6;">Open for tournament rosters, university club opportunities, athletic training camps, and sports collaborations.</p>
+      </div>
+
+      <div>
+        <div class="contact-col-title">ATHLETE CONTACT</div>
+        <a href="mailto:yashasgowda.volleyball@example.com" class="contact-col-value">yashasgowda.volleyball@example.com</a>
+        <div style="margin-top: 0.5rem;" class="text-muted">Bangalore, Karnataka, India</div>
+      </div>
+
+      <div>
+        <div class="contact-col-title">CURRENT CLUB</div>
+        <div class="contact-col-value">EPCET Volleyball Club</div>
+        <div style="margin-top: 0.5rem;" class="text-muted">District Level · Outside Attacker #17</div>
+      </div>
+
+      <div>
+        <div class="contact-col-title">CONNECT</div>
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="contact-col-value">Instagram: @yashu_17_vb</a>
+        <div style="margin-top: 0.5rem;" class="text-muted">Built for the Next Level</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Main Script -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
