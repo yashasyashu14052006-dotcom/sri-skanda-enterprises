@@ -86,6 +86,7 @@ Every button, phone link, WhatsApp link, and footer detail across the entire web
 
 ```
 Sriskand enterprises/
+├── .gitignore         # Git ignore rules for OS, IDE, caches, and logs
 ├── index.html         # Main website structure, schema markup & SEO
 ├── assets/
 │   └── images/        # Official logo and high-resolution UPVC product & gallery photos
